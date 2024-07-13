@@ -1,0 +1,11 @@
+server:
+  port: 9093
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/training
+    username: root
+    password: 15111997Taechka
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
