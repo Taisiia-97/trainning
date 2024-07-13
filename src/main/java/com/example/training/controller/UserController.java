@@ -2,6 +2,7 @@ package com.example.training.controller;
 
 
 import com.example.training.domain.User;
+import com.example.training.dto.UserDto;
 import com.example.training.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,8 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user){
+    public User createUser(@RequestBody UserDto userDto){
+        User user = new User(userDto.getId(),userDto.getFirstName(),userDto.getLastName());
         return  userService.createUser(user);
     }
 }
