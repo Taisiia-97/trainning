@@ -1,3 +1,7 @@
-FROM eclipse-temurin:17-jre-alpine
-COPY /target/training-app.jar /training-app.jar
-ENTRYPOINT ["java","-jar","/training-app.jar"]
+FROM maven:3.8.5-openjdk-17
+
+WORKDIR /training
+COPY . .
+RUN mvn clean install
+
+CMD mvn spring-boot:run

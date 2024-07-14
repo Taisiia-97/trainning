@@ -18,13 +18,13 @@ public class UserController {
 
 
     @GetMapping
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         return userService.getUsers();
     }
 
     @PostMapping
-    public User createUser(@RequestBody UserDto userDto){
-        User user = new User(userDto.getId(),userDto.getFirstName(),userDto.getLastName());
-        return  userService.createUser(user);
+    public User createUser(@RequestBody UserDto userDto) {
+        User user = new User(userDto.id(), userDto.firstName(), userDto.lastName());
+        return userService.createUser(user);
     }
 }
